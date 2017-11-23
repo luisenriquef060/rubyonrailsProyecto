@@ -1,0 +1,22 @@
+<h1>CompraVenta</h1>
+<p>para mantener su seguirdad y y un mejor registro porfavor logeese</p>
+<div>
+<% if flash[:alert]%>
+<p id ="notice"> <%= flash[:alert]%></p>
+<% end %>
+<%= form_tag do %>
+<fieldset>
+	<legend>Porfavor Logarse </legend>
+	<div>
+	<%= label_tag :name, 'name' %>
+	<%= text_field_tag :name, params[:name] %>
+	<%= label_tag :password, 'password' %>
+	<%= password_field_tag :password, params[:password] %>
+	</div>
+	<%= submit_tag "login" %>
+	
+	<div>
+</fieldset>
+<% end %>
+<%= link_to 'crear usuario', new_user_path, class: 'button alt' %>
+</div>
